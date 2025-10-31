@@ -40,15 +40,14 @@ botones_numero.forEach(btn => {
 });
 
 function girar(result) {
-    const random_X = 720 + Math.floor(Math.random() * 720);
-    const random_Y = 720 + Math.floor(Math.random() * 720);
+    const girosCompletosX = 720 + Math.floor(Math.random() * 720);
+    const girosCompletosY = 720 + Math.floor(Math.random() * 720);
 
-    caras.style.transition = "transform 1.5s ease-out";
-    caras.style.transform = `rotateX(${random_X}deg) rotateY(${random_Y}deg)`;
+    caras.style.transition = "transform 1.2s ease-out";
+    caras.style.transform = `rotateX(${girosCompletosX}deg) rotateY(${girosCompletosY}deg)`;
 
     setTimeout(() => {
-        let rotX = 0;
-        let rotY = 0;
+        let rotX = 0, rotY = 0;
 
         switch (result) {
             case 1: rotX = 0; rotY = 0; break;
@@ -59,14 +58,14 @@ function girar(result) {
             case 6: rotX = 90; rotY = 0; break;
         }
 
-        const offsetX = Math.floor(Math.random() * 10) - 5;
-        const offsetY = Math.floor(Math.random() * 10) - 5;
+        const offsetX = Math.floor(Math.random() * 6) - 3;
+        const offsetY = Math.floor(Math.random() * 6) - 3;
 
-        caras.style.transition = "transform 0.5s ease-in-out";
+        caras.style.transition = "transform 0.6s ease-in-out";
         caras.style.transform = `rotateX(${rotX + offsetX}deg) rotateY(${rotY + offsetY}deg)`;
-    }, 800);
+    }, 1200);
 
-    return 1400;
+    return 1800;
 }
 
 tirar.addEventListener("click", () => {
@@ -107,7 +106,7 @@ tirar.addEventListener("click", () => {
         if (dinero <= 0) {
             mostrarAlerta("Has perdido todo tu dinero. Fin del juego.", () => location.reload());
         } else if (dinero >= 200) {
-            mostrarAlerta("¡Has llegado al límite! ¡Eres el ganador!", () => location.reload());
+            mostrarAlerta("¡Has llegado a los $200 pesos! ¡Eres el ganador!", () => location.reload());
         }
     }, tiempoGiro);
 });

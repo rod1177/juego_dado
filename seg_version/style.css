@@ -74,8 +74,8 @@ h1 {
 
 .caras_dado {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg);
     transition: transform 1s ease-in-out;
@@ -89,10 +89,6 @@ h1 {
     background: radial-gradient(circle at center, #fff 80%, #ddd);
     border: 3px solid #333;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     box-shadow: inset 0 0 10px #0005, 0 0 8px #000;
 }
 
@@ -103,14 +99,22 @@ h1 {
 .cara.cinco { transform: rotateX(90deg) translateZ(60px); }
 .cara.seis  { transform: rotateX(-90deg) translateZ(60px); }
 
-.puntos {
+.punto {
+    position: absolute;
     width: 18px;
     height: 18px;
     background: radial-gradient(circle, #000 60%, #222);
     border-radius: 50%;
-    margin: 10px;
     box-shadow: 0 0 5px #000a;
 }
+
+.centro { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.arriba_izq { top: 20%; left: 20%; }
+.arriba_der { top: 20%; right: 20%; }
+.medio_izq { top: 50%; left: 20%; transform: translateY(-50%); }
+.medio_der { top: 50%; right: 20%; transform: translateY(-50%); }
+.abajo_izq { bottom: 20%; left: 20%; }
+.abajo_der { bottom: 20%; right: 20%; }
 
 .controles {
     display: flex;
@@ -185,7 +189,6 @@ input:hover {
 
 .tirar_Dado:active {
     background: rgb(255, 183, 2);
-
 }
 
 .mensaje {
