@@ -40,11 +40,11 @@ botones_numero.forEach(btn => {
 });
 
 function girar(result) {
-    const girosCompletosX = 720 + Math.floor(Math.random() * 720);
-    const girosCompletosY = 720 + Math.floor(Math.random() * 720);
+    const giros_CompletosX = 720 + Math.floor(Math.random() * 720);
+    const giros_CompletosY = 720 + Math.floor(Math.random() * 720);
 
     caras.style.transition = "transform 1.2s ease-out";
-    caras.style.transform = `rotateX(${girosCompletosX}deg) rotateY(${girosCompletosY}deg)`;
+    caras.style.transform = `rotateX(${giros_CompletosX}deg) rotateY(${giros_CompletosY}deg)`;
 
     setTimeout(() => {
         let rotX = 0, rotY = 0;
@@ -87,7 +87,7 @@ tirar.addEventListener("click", () => {
     }
 
     const resultado = Math.floor(Math.random() * 6) + 1;
-    const tiempoGiro = girar(resultado);
+    const tiempo_Giro = girar(resultado);
 
     setTimeout(() => {
         if (resultado === num_Seleccionado) {
@@ -108,5 +108,5 @@ tirar.addEventListener("click", () => {
         } else if (dinero >= 200) {
             mostrarAlerta("¡Has llegado a los $200 pesos! ¡Eres el ganador!", () => location.reload());
         }
-    }, tiempoGiro);
+    }, tiempo_Giro);
 });
