@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de dados</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.jpg">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="barra barra_izquierda">
+        <div class="texto_neon">🎲 Prueba tu suerte 🎲</div>
+    </div>
+
+    <header>
+        <h1>6 posibilidades, ¡una victoria!</h1>
+    </header>
+
+    <main>
+        <section class="mesa">
+            <div class="dado">
+                <div class="caras_dado" id="caras_Dado">
+                    <div class="cara uno"><span class="puntos"></span></div>
+                    <div class="cara dos"><span class="puntos"></span><span class="puntos"></span></div>
+                    <div class="cara tres"><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span></div>
+                    <div class="cara cuatro"><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span></div>
+                    <div class="cara cinco"><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span></div>
+                    <div class="cara seis"><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span><span class="puntos"></span></div>
+                </div>
+            </div>
+
+            <div class="mensaje" id="mensaje"></div>
+
+            <div class="controles">
+                <div class="seleccion_numero">
+                    <h2>Seleccione un número para su apuesta</h2>
+                    <div class="botones">
+                        <button class="boton_Num" data-num="1">1</button>
+                        <button class="boton_Num" data-num="2">2</button>
+                        <button class="boton_Num" data-num="3">3</button>
+                        <button class="boton_Num" data-num="4">4</button>
+                        <button class="boton_Num" data-num="5">5</button>
+                        <button class="boton_Num" data-num="6">6</button>
+                    </div>
+                </div>
+
+                <div class="seccion_apuesta">
+                    <label for="apuesta" style="font-size: 25px; font-weight: bold;">Apuesta ($)</label>
+                    <input type="number" id="apuesta" min="1">
+                    <button id="tirar_Dado" class="tirar_Dado">🎲 ¡Lanzar!</button>
+                </div>
+
+                <div class="dinero">
+                    <h2 style="font-size: 30px;">💵 Dinero restante ($): <span id="money">50</span></h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="barra barra_derecha">
+        <div class="texto_neon">🎲 Tira y gana 🎲</div>
+    </div>
+
+    <div id="alerta" class="alerta_oculta">
+        <div class="alerta_contenido" id="alerta_contenido">
+            <p id="alerta_mensaje"></p>
+            <button id="alerta_btn">Aceptar</button>
+        </div>
+    </div>
+</body>
+</html>
