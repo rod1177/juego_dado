@@ -63,7 +63,7 @@ function girar(result) {
 
         caras.style.transition = "transform 0.6s ease-in-out";
         caras.style.transform = `rotateX(${rotX + offsetX}deg) rotateY(${rotY + offsetY}deg)`;
-    }, 1200);
+    }, 1000);
 
     return 1800;
 }
@@ -104,9 +104,13 @@ tirar.addEventListener("click", () => {
         billete.textContent = dinero;
 
         if (dinero <= 0) {
-            mostrarAlerta("Has perdido todo tu dinero. Fin del juego.", () => location.reload());
+            mostrarAlerta("Has perdido todo tu dinero, suerte a la proxima", () => location.reload());
         } else if (dinero >= 200) {
             mostrarAlerta("¡Has llegado a los $200 pesos! ¡Eres el ganador!", () => location.reload());
         }
     }, tiempo_Giro);
+    
+    tirar.disabled = true;
+    setTimeout(() => { tirar.disabled = false; }, tiempo_Giro);
+
 });
